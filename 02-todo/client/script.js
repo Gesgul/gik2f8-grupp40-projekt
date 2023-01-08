@@ -123,19 +123,13 @@ function renderTask(task) {
       <p class="ml-8 mt-2 text-xs italic ">${task.description}</p>
       <div class="flex items-center pl-4">
     <input id="checkbox-${task.id}" onclick='checkboxstate(this,${JSONData})' type="checkbox" value="" name="bordered-checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-    <label for="-checkbox" class="py-4 ml-2 w-full text-1 font-bold text-pink-800 italic ">klar</label>
+    <label for="-checkbox" class="py-4 ml-2 w-full text-1 font-bold text-blue-800 italic ">klar</label>
     </div>
     
   `);
 
   html += `
     </li>`;
-
-  /***********************Labb 2 ***********************/
-  /* I ovanstående template-sträng skulle det vara lämpligt att sätta en checkbox, eller ett annat element som någon kan klicka på för att markera en uppgift som färdig. 
-  Det elementet bör, likt knappen för delete, också lyssna efter ett event (om du använder en checkbox, kolla på exempelvis w3schools vilket element som triggas hos en checkbox när dess värde förändras.). Skapa en eventlyssnare till det event du finner lämpligt. 
-  Funktionen behöver nog ta emot ett id, så den vet vilken uppgift som ska markeras som färdig. Det skulle kunna vara ett checkbox-element som har attributet on[event]="updateTask(id)". */
-  /***********************Labb 2 ***********************/
 
   return html;
 }
@@ -160,28 +154,4 @@ function deleteTask(id) {
 function updateTask(data) {
   api.update(data).then((result) => {});
 }
-
-/***********************Labb 2 ***********************/
-/* Här skulle det vara lämpligt att skriva den funktion som angivits som eventlyssnare för när någon markerar en uppgift som färdig. Jag pratar alltså om den eventlyssnare som angavs i templatesträngen i renderTask. Det kan t.ex. heta updateTask. 
-  
-Funktionen bör ta emot ett id som skickas från <li>-elementet.
-*/
-
-/* Inuti funktionen kan ett objekt skickas till api-metoden update. Objektet ska som minst 
-innehålla id på den uppgift som ska förändras, samt egenskapen completed som true eller false, 
-beroende på om uppgiften markerades som färdig eller ofärdig i gränssnittet. 
-Det finns några sätt att utforma det som ska skickas till api.update-metoden. 
-Alternativ 1: objektet består av ett helt task-objekt, som också inkluderar förändringen. 
-Exempel: {id: 1,  title: "x", description: "x", dueDate: "x", completed: true/false}
-Alternativ 2: objektet består bara av förändringarna och id på den uppgift som ska förändras. Exempel: {id: 1, completed: true/false } 
-Om du hittar något annat sätt som funkar för dig, använd för all del det, så länge det uppnår samma sak. :)
-*/
-
-/* Anropet till api.update ska följas av then(). then() behöver, som bör vara bekant vid det här laget, 
-en callbackfunktion som ska hantera det som kommer tillbaka från servern via vår api-klass. 
-Inuti den funktionen bör listan med uppgifter renderas på nytt, så att den nyligen gjorda förändringen syns. */
-
-/***********************Labb 2 ***********************/
-
-/* Slutligen. renderList anropas också direkt, så att listan visas när man först kommer in på webbsidan.  */
 renderList();
