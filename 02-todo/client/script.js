@@ -123,7 +123,7 @@ function renderTask(task) {
       <p class="ml-8 mt-2 text-xs italic ">${task.description}</p>
       <div class="flex items-center pl-4">
     <input id="checkbox-${task.id}" onclick='checkboxstate(this,${JSONData})' type="checkbox" value="" name="bordered-checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-    <label for="-checkbox" class="py-4 ml-2 w-full text-1 font-bold text-pink-800 italic ">Utförd</label>
+    <label for="-checkbox" class="py-4 ml-2 w-full text-1 font-bold text-pink-800 italic ">klar</label>
     </div>
     
   `);
