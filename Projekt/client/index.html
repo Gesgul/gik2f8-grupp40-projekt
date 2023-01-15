@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon" />
+  <title>Ballon d'or Winnera</title>
+</head>
+
+<body>
+  <main id="root">
+    <h1 class="text-center mb-10">Ballon d'or lista</h1>
+    <section class="">
+      <section class="">
+        <h2 class="mb-6">Lägg till en Spelare</h2>
+        <form id="WinnersForm" name="WinnersForm">
+          <section class="mb-2">
+            <label class="block pr-5 mb-2" for="playerNamn">Player Full Namn</label>
+
+            <p class="message text-sm hidden">
+              Error message
+            </p>
+
+            <input type="text" id="playerNamn" name="playerNamn" class="" />
+          </section>
+
+          <section class="mb-2">
+            <label class="block pr-5 mb-2" for="lag">Lag Namn</label>
+            <p class="message text-sm hidden">
+              Error message
+            </p>
+            <input type="text" id="lag" name="lag" class="" />
+          </section>
+          <section class="mb-2">
+            <label class="block pr-5 mb-2" for="playerNamn">Vilket år</label>
+            <p class="message text-sm hidden">
+              Error message
+            </p>
+            <input type="date" id="dueDate" name="dueDate" class="" />
+          </section>
+
+          <button name="submitWinnersForm" class="" type="submit">
+            Spara
+          </button>
+
+        </form>
+      </section>
+
+      <section class="">
+        <h2 class="mb-6">Alla Vinnerna</h2>
+
+        <ul id="WinnersList">
+
+        </ul>
+      </section>
+    </section>
+  </main>
+  <script src="Api.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
